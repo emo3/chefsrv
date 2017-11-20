@@ -1,0 +1,24 @@
+# show node's
+knife node list
+
+# Add node to chef server:
+for x in chefsrv myapm websrv; do
+  knife bootstrap $x -x vagrant -P vagrant --sudo -N $x -y
+done
+
+# add chef server recipe
+for x in chefsrv; do
+  knife node run_list add $x 'recipe[chefsrv::default]'
+done
+
+# show a node's details
+for x in chefsrv myapm websrv; do
+  knife node show $x
+done
+
+# run chefsrv recipe on a node
+for x in chefsrv; do
+  knife ssh $x \
+"sudo chef-client -o 'recipe[chefsrv::default]'" \
+-x vagrant -P vagrant
+done
