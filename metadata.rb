@@ -20,4 +20,3 @@ supports 'redhat'
 #
 # source_url 'https://github.com/<insert_org_here>/chefsrv`'
 depends 'chef-server'
-depends 'vsftpd'

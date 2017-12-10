@@ -25,7 +25,6 @@ suites:
   - name: chefsrv
     run_list:
       - recipe[chefsrv::default]
-      - recipe[vsftpd::default]
     verifier:
       inspec_tests:
         - test/smoke/default
