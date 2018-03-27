@@ -22,3 +22,10 @@ for x in chefsrv; do
 "sudo chef-client -o 'recipe[chefsrv::default]'" \
 -x vagrant -P vagrant
 done
+
+# if you regenerate a new chefsrv do the following:
+cd ~/chef/.chef
+scp vagrant@chefsrv:/admin.pem .
+cd ..
+knife ssl fetch
+knife ssl check
