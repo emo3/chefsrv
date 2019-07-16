@@ -4,6 +4,7 @@ execute 'create-admin-user' do
 #{node['chefsrv']['first_name']} #{node['chefsrv']['last_name']} \
 #{node['chefsrv']['email']} #{node['chefsrv']['password']} \
 --filename #{node['chefsrv']['user_name']}.pem"
+  sensitive true
   not_if "chef-server-ctl user-list | grep #{node['chefsrv']['user_name']}"
 end
 
@@ -12,5 +13,6 @@ execute 'create-organization' do
 #{node['chefsrv']['full_org']} \
 --association_user #{node['chefsrv']['user_name']} \
 --filename #{node['chefsrv']['org']}.pem"
+  sensitive true
   not_if "chef-server-ctl org-list | grep #{node['chefsrv']['org']}"
 end
