@@ -1,13 +1,13 @@
 ---
 driver:
   name: vagrant
-  vm_hostname: chefsrv
+  vm_hostname: <%= ENV['CHEF_NAME'] %>
   customize:
     memory: <%= ENV['CHEF_RAM'] %>
     cpus: <%= ENV['CHEF_CPU'] %>
-    name: chefsrv
+    name: <%= ENV['CHEF_NAME'] %>
   network:
-   - ['private_network', ip: '10.1.1.10']
+   - ['private_network', ip: '<%= ENV['CHEF_IP'] %>']
 
 provisioner:
   name: chef_zero
@@ -23,7 +23,7 @@ verifier:
 platforms:
   - name: mycentos7
     provisioner:
-      download_url: https://10.1.1.30/media/chef-<%= ENV['chef_release'] %>-1.el7.x86_64.rpm
+      download_url: http://10.1.1.30/media/chef-<%= ENV['chef_release'] %>-1.el7.x86_64.rpm
 
 suites:
   - name: chefsrv

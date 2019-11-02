@@ -1,7 +1,7 @@
 # Override values within called cookbook
 default['chef-server']['accept_license'] = true
-#default['chef-server']['version'] = '12.19.31'
-default['chef-server']['version'] = nil
+default['chef-server']['version'] = '12.19.31'
+# default['chef-server']['version'] = nil
 default['chef-server']['addons'] = {manage: nil, reporting: nil}
 # set default varibles for user-create
 default['chefsrv']['user_name']  = 'admin'
