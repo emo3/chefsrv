@@ -24,6 +24,7 @@ for x in chefsrv; do
 done
 
 # if you regenerate a new chefsrv do the following:
+mkdir -p ~/chef/.chef
 cd ~/chef/.chef
 scp vagrant@chefsrv:/admin.pem .
 cd ..
