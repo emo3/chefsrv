@@ -2,7 +2,7 @@
 knife node list
 
 # Add node to chef server:
-for x in chefsrv myapm rwebsrv; do
+for x in chefsrv myapm rchefsrv; do
   knife bootstrap $x -x vagrant -P vagrant --sudo -N $x -y
 done
 
@@ -12,7 +12,7 @@ for x in chefsrv; do
 done
 
 # show a node's details
-for x in chefsrv myapm rwebsrv; do
+for x in chefsrv myapm rchefsrv; do
   knife node show $x
 done
 
