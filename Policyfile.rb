@@ -13,4 +13,4 @@ default_source :supermarket
 run_list 'chefsrv::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'chefsrv', "~> 1.2"
+cookbook 'chefsrv', path: '.'
