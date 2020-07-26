@@ -6,7 +6,7 @@ maintainer_email 'you1@example.com'
 chef_version     '>= 13.9'
 license          'Apache-2.0'
 description      'Installs/Configures chefsrv'
-version          '1.3.0'
+version          '1.4.0'
 
 supports 'redhat'
 supports 'centos'
